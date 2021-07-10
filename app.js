@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV != 'production') {
-    require('dotenv').config()
+    require('dotenv').config();
 }
 
 const express = require('express');
@@ -25,7 +25,8 @@ mongoose.connect(process.env.DB_URL,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify:false
+        useFindAndModify:false,
+        useCreateIndex:true
     })
     .then(()=>{
         console.log("DB connected");
